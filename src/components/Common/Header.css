@@ -1,0 +1,46 @@
+.header {
+	background-color: black;
+	color: white;
+  font-weight: 400;
+}
+
+.brand_logo img {
+	object-fit: cover;
+}
+
+.nav a {
+	font-size: 1.1rem;
+	margin: 1.25rem;
+	color: rgba(220, 220, 220, 0.5);
+	position: relative;
+}
+
+a.active {
+	color: white;
+}
+
+.active::after {
+	content: "";
+	display: block;
+	width: 50%;
+	height: 2px;
+	margin: 0.5rem auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.header .user h3 {
+  color: rgba(220, 220, 220, 0.8);
+}
+
+.header .user_avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: white;
+  color: rgb(62, 62, 221);
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
