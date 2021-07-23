@@ -1,0 +1,10 @@
+.frame {
+  cursor: pointer;
+  position: relative;
+}
+
+.frame video {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+}

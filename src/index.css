@@ -94,14 +94,26 @@ table {
   margin: .5rem;
 }
 
+.mx-2 {
+  margin: 0 .5rem;
+}
+
 .m-4 {
   margin: 1rem;
+}
+
+.my-4 {
+  margin: 1rem 0;
 }
 
 /* Flex */
 
 .flex {
   display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .justify-between {

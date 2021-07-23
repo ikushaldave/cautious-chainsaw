@@ -25,6 +25,7 @@ a.active {
 	width: 50%;
 	height: 2px;
 	margin: 0.5rem auto;
+	background-color: white;
 	position: absolute;
 	left: 0;
 	right: 0;
