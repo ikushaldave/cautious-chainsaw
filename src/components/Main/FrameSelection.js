@@ -7,6 +7,12 @@ import "./FrameSelection.css";
 function FrameSelection({ frames, selectFrameHandler, nextHandler, selectedFrames }) {
 	return (
 		<div>
+			<div className="flex justify-between items-center my-4">
+				<span className="frame_info">Select a video frame</span>
+				<span className="frame_info selection_frame_info">
+					{selectedFrames.length} selected out of {frames.data.length} frames
+				</span>
+			</div>
 			<div className="flex justify-between flex-wrap">
 				{frames.data.map((video) => (
 					<div className="frame my-4" key={video.name} onClick={() => selectFrameHandler(video)}>
@@ -15,7 +21,7 @@ function FrameSelection({ frames, selectFrameHandler, nextHandler, selectedFrame
 					</div>
 				))}
 			</div>
-			<BlueButton text="Next" onClick={nextHandler} />
+			<BlueButton className="center mx-4" text="Next" onClick={nextHandler} />
 		</div>
 	);
 }

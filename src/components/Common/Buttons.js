@@ -1,10 +1,12 @@
 import "./Buttons.css";
 
-function BlueButton({ text, onClick }) {
+function BlueButton({ className, text, onClick }) {
 	return (
-		<button className="btn btn_white_text btn_blue" onClick={onClick}>
-			{text}
-		</button>
+		<div className={className}>
+			<button className="btn btn_white_text btn_blue" onClick={onClick}>
+				{text}
+			</button>
+		</div>
 	);
 }
 

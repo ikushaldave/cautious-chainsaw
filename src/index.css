@@ -106,6 +106,10 @@ table {
   margin: 1rem 0;
 }
 
+.my-8 {
+  margin: 2rem 0;
+}
+
 /* Flex */
 
 .flex {
@@ -133,4 +137,10 @@ table {
 a {
   display: inline-block;
   text-decoration: none;
+}
+
+/* alignment */
+
+.center {
+  text-align: center;
 }

@@ -41,7 +41,7 @@ function Main() {
 		<main>
 			<div className="container">
 				<div>
-					<ProjectTitle title="My Project" />
+					<ProjectTitle />
 				</div>
 				{loading ? <h3>Loading...</h3> : nextStep ? null : <FrameSelection frames={frames} selectedFrames={selectedFrames} selectFrameHandler={selectedFrameHandler} nextHandler={nextHandler} />}
 			</div>
