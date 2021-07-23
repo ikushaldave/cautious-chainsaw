@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
-import FrameSelection from "./FrameSelection";
 import ProjectTitle from "../Common/ProjectTitle";
+import FrameSelection from "./FrameSelection";
+import VideoEditor from "./VideoEditor";
 
 import "./Main.css";
 
@@ -23,7 +24,7 @@ function Main() {
 	}, []);
 
 	const nextHandler = () => {
-		if (selectedFrames.length < 2) return;
+		if (selectedFrames.length < 2) return alert("Select minimum 2 frames to create video");
 		setNextStep(true);
 	};
 
@@ -43,7 +44,7 @@ function Main() {
 				<div>
 					<ProjectTitle />
 				</div>
-				{loading ? <h3>Loading...</h3> : nextStep ? null : <FrameSelection frames={frames} selectedFrames={selectedFrames} selectFrameHandler={selectedFrameHandler} nextHandler={nextHandler} />}
+				{loading ? <h3>Loading...</h3> : nextStep ? <VideoEditor selectedFrames={selectedFrames} /> : <FrameSelection frames={frames} selectedFrames={selectedFrames} selectFrameHandler={selectedFrameHandler} nextHandler={nextHandler} />}
 			</div>
 		</main>
 	);
