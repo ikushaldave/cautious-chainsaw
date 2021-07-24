@@ -68,6 +68,11 @@ table {
   box-sizing: border-box;
 }
 
+body {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 .container {
   max-width: 1350px;
   margin: 0 auto;
@@ -88,6 +93,10 @@ table {
   padding: 1.5rem;
 }
 
+.py-12 {
+  padding: 3rem 0;
+}
+
 /* Margin */
 
 .m-2 {
@@ -96,6 +105,10 @@ table {
 
 .mx-2 {
   margin: 0 .5rem;
+}
+
+.mx-4 {
+  margin: 0 1rem;
 }
 
 .m-4 {
@@ -110,14 +123,24 @@ table {
   margin: 2rem 0;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 /* Flex */
 
 .flex {
   display: flex;
+  flex-direction: row;
 }
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .justify-between {
@@ -128,8 +151,16 @@ table {
   justify-content: center;
 }
 
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
 .items-center  {
   align-items: center;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 /* Links */
@@ -143,4 +174,24 @@ a {
 
 .center {
   text-align: center;
+}
+
+/* Width's */
+
+.w-4 {
+  min-width: 4%;
+}
+
+.w-12 {
+  min-width: 12%;
+}
+
+.w-80 {
+  min-width: 84%;
+}
+
+/* overflow */
+
+.overflow-y {
+  overflow-y: scroll;
 }

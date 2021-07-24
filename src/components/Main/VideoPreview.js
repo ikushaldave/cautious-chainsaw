@@ -5,7 +5,7 @@ import "./VideoPreview.css";
 
 function VideoPreview({ previewRef, currentFrame, playState, playHandler }) {
 	return (
-		<div className="flex justify-center">
+		<div className="container flex justify-center">
 			<div className="player">
 				<video src={currentFrame.url} ref={previewRef} controls={playState} />
 				{playState ? null : (

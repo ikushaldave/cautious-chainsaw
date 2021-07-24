@@ -41,11 +41,9 @@ function Main() {
 	return (
 		<main>
 			<div className="container">
-				<div>
-					<ProjectTitle />
-				</div>
-				{loading ? <h3>Loading...</h3> : nextStep ? <VideoEditor selectedFrames={selectedFrames} /> : <FrameSelection frames={frames} selectedFrames={selectedFrames} selectFrameHandler={selectedFrameHandler} nextHandler={nextHandler} />}
+				<ProjectTitle />
 			</div>
+			{loading ? <h3>Loading...</h3> : nextStep ? <VideoEditor selectedFrames={selectedFrames} /> : <FrameSelection frames={frames} selectedFrames={selectedFrames} selectFrameHandler={selectedFrameHandler} nextHandler={nextHandler} />}
 		</main>
 	);
 }

@@ -1,0 +1,45 @@
+.video_time {
+  background-color: rgb(20,20,44);
+}
+
+.video_time h3 {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.527);
+  margin: .6rem
+}
+
+.video_time span {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: whitesmoke;
+}
+
+.video_tools {
+  background-color: rgb(0,70,243);
+}
+
+.video_tools button {
+  color: white;
+  font-size: 1.25rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.video_frame_section {
+  background-color: rgb(250,250,250);
+}
+
+.video_frame {
+  min-width: 250px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.active_frame {
+  border: 10px solid rgb(205,218,254);
+}

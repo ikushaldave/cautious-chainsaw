@@ -6,7 +6,7 @@ import "./FrameSelection.css";
 
 function FrameSelection({ frames, selectFrameHandler, nextHandler, selectedFrames }) {
 	return (
-		<div>
+		<div className="container">
 			<div className="flex justify-between items-center my-4">
 				<span className="frame_info">Select a video frame</span>
 				<span className="frame_info selection_frame_info">

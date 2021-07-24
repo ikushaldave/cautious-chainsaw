@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 
 import PropTypes from "prop-types";
 import VideoPreview from "./VideoPreview";
+import VideoEditTools from "./VideoEditTools";
 
 function VideoEditor({ selectedFrames }) {
 	const [currentFrameNumber, setCurrentFrameNumber] = useState(0);
@@ -16,8 +17,9 @@ function VideoEditor({ selectedFrames }) {
 	};
 
 	return (
-		<div className="my-8">
+		<div className="mt-16">
 			<VideoPreview currentFrame={currentFrame} previewRef={previewRef} playState={playState} playHandler={playHandler} />
+			<VideoEditTools currentFrame={currentFrame} frames={selectedFrames} />
 		</div>
 	);
 }
