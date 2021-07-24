@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ProjectTitle from "../Common/ProjectTitle";
 import FrameSelection from "./FrameSelection";
 import VideoEditor from "./VideoEditor";
+import { BlueButton } from "../Common/Buttons";
 
 import "./Main.css";
 
@@ -40,8 +41,9 @@ function Main() {
 
 	return (
 		<main>
-			<div className="container">
+			<div className="container flex justify-between items-center">
 				<ProjectTitle />
+				{nextStep ? <BlueButton text="Save Video" onClick={() => alert("Video Saved Successfully")} /> : null}
 			</div>
 			{loading ? <h3>Loading...</h3> : nextStep ? <VideoEditor selectedFrames={selectedFrames} setNextStep={setNextStep} setSelectedFrames={setSelectedFrames} /> : <FrameSelection frames={frames} selectedFrames={selectedFrames} selectFrameHandler={selectedFrameHandler} nextHandler={nextHandler} />}
 		</main>

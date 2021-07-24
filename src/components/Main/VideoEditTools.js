@@ -6,7 +6,7 @@ import { MdSkipPrevious, MdSkipNext } from "react-icons/md";
 
 import "./VideoEditTools.css";
 
-function VideoEditTools({ frames, currentFrame, previousFrameHandler, nextFrameHandler, setNextStep, setSelectedFrames }) {
+function VideoEditTools({ frames, currentFrame, previousFrameHandler, nextFrameHandler, setNextStep, setSelectedFrames, setCurrentFrameNumber }) {
 	const addMoreFrameHandler = () => {
 		setNextStep(false);
 	};
@@ -15,6 +15,13 @@ function VideoEditTools({ frames, currentFrame, previousFrameHandler, nextFrameH
 		const cloneFrames = [...frames];
 		const framesWithDeleted = cloneFrames.splice(frameNumber, 1);
 		setSelectedFrames(cloneFrames);
+		if (cloneFrames.length < 2) {
+			setNextStep(false);
+		}
+	};
+
+	const frameHandler = (frameNumber) => {
+		setCurrentFrameNumber(frameNumber);
 	};
 
 	return (
@@ -43,9 +50,14 @@ function VideoEditTools({ frames, currentFrame, previousFrameHandler, nextFrameH
 				</button>
 			</div>
 			<div className="flex items-center py-12 w-84 overflow-y video_frame_section">
-				{frames.map((frame) => (
-					<video key={frame.name} src={frame.url} className={currentFrame === frame ? "video_frame mx-4 active_frame" : "video_frame mx-4"} />
+				{frames.map((frame, frameNumber) => (
+					<video key={frame.name} src={frame.url} className={currentFrame === frame ? "video_frame mx-4 active_frame" : "video_frame mx-4"} onClick={() => frameHandler(frameNumber)} />
 				))}
+				<div className="current_track_line">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
 			</div>
 		</div>
 	);

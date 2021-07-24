@@ -31,6 +31,7 @@
 
 .video_frame_section {
   background-color: rgb(250,250,250);
+  position: relative;
 }
 
 .video_frame {
@@ -42,4 +43,14 @@
 
 .active_frame {
   border: 10px solid rgb(205,218,254);
+}
+
+.current_track_line {
+  width: 8px;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 10px, 70% 18px, 70% 100%, 30% 100%, 30% 18px, 0 10px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: black;
 }

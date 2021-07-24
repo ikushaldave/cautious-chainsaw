@@ -36,7 +36,7 @@ function VideoEditor({ selectedFrames, setNextStep, setSelectedFrames }) {
 	return (
 		<div className="mt-16">
 			<VideoPreview currentFrame={currentFrame} videoPreviewRef={videoPreviewRef} playState={playState} playHandler={playHandler} nextFrameHandler={nextFrameHandler} />
-			<VideoEditTools currentFrame={currentFrame} frames={selectedFrames} previousFrameHandler={previousFrameHandler} nextFrameHandler={nextFrameHandler} setNextStep={setNextStep} setSelectedFrames={setSelectedFrames} />
+			<VideoEditTools currentFrame={currentFrame} frames={selectedFrames} previousFrameHandler={previousFrameHandler} nextFrameHandler={nextFrameHandler} setNextStep={setNextStep} setSelectedFrames={setSelectedFrames} setCurrentFrameNumber={setCurrentFrameNumber} />
 		</div>
 	);
 }
