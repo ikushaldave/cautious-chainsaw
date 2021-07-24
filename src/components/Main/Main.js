@@ -21,7 +21,7 @@ function Main() {
 			setLoading(false);
 		}
 
-		getFetch("http://devserver.blkbox.ai/api/studio/creatives/step2");
+		getFetch("https://devserver.blkbox.ai/api/studio/creatives/step2");
 	}, []);
 
 	const nextHandler = () => {
