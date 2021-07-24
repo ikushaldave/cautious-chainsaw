@@ -6,7 +6,17 @@ import { MdSkipPrevious, MdSkipNext } from "react-icons/md";
 
 import "./VideoEditTools.css";
 
-function VideoEditTools({ frames, currentFrame }) {
+function VideoEditTools({ frames, currentFrame, previousFrameHandler, nextFrameHandler, setNextStep, setSelectedFrames }) {
+	const addMoreFrameHandler = () => {
+		setNextStep(false);
+	};
+
+	const deleteFrameHandler = (frameNumber) => {
+		const cloneFrames = [...frames];
+		const framesWithDeleted = cloneFrames.splice(frameNumber, 1);
+		setSelectedFrames(cloneFrames);
+	};
+
 	return (
 		<div className="flex mt-16">
 			<div className="flex justify-center items-center w-12 video_time">
@@ -16,23 +26,23 @@ function VideoEditTools({ frames, currentFrame }) {
 				</div>
 			</div>
 			<div className="flex-col justify-evenly items-center w-4 video_tools">
-				<button>
+				<button onClick={addMoreFrameHandler}>
 					<IoAddCircleOutline />
 				</button>
 				<button>
 					<RiExchangeLine />
 				</button>
-				<button>
+				<button onClick={previousFrameHandler}>
 					<MdSkipPrevious />
 				</button>
-				<button>
+				<button onClick={nextFrameHandler}>
 					<MdSkipNext />
 				</button>
-				<button>
+				<button onClick={() => deleteFrameHandler(currentFrame)}>
 					<RiDeleteBin5Line />
 				</button>
 			</div>
-			<div className="flex items-center py-12 2-80 overflow-y video_frame_section">
+			<div className="flex items-center py-12 w-84 overflow-y video_frame_section">
 				{frames.map((frame) => (
 					<video key={frame.name} src={frame.url} className={currentFrame === frame ? "video_frame mx-4 active_frame" : "video_frame mx-4"} />
 				))}
@@ -40,5 +50,12 @@ function VideoEditTools({ frames, currentFrame }) {
 		</div>
 	);
 }
+
+VideoEditTools.prototype = {
+	frames: PropTypes.array.isRequired,
+	currentFrame: PropTypes.number.isRequired,
+	previousFrameHandler: PropTypes.func.isRequired,
+	nextFrameHandler: PropTypes.func.isRequired,
+};
 
 export default VideoEditTools;

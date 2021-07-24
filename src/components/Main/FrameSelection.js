@@ -15,10 +15,10 @@ function FrameSelection({ frames, selectFrameHandler, nextHandler, selectedFrame
 			</div>
 
 			<div className="flex justify-between flex-wrap">
-				{frames.data.map((video) => (
-					<div className="frame my-4" key={video.name} onClick={() => selectFrameHandler(video)}>
-						<video src={video.url}></video>
-						{selectedFrames.includes(video) ? <SelectedFrame /> : null}
+				{frames.data.map((frame) => (
+					<div className="frame my-4" key={frame.name} onClick={() => selectFrameHandler(frame)}>
+						<video src={frame.url}></video>
+						{selectedFrames.includes(frame) ? <SelectedFrame /> : null}
 					</div>
 				))}
 			</div>

@@ -43,7 +43,7 @@ function Main() {
 			<div className="container">
 				<ProjectTitle />
 			</div>
-			{loading ? <h3>Loading...</h3> : nextStep ? <VideoEditor selectedFrames={selectedFrames} /> : <FrameSelection frames={frames} selectedFrames={selectedFrames} selectFrameHandler={selectedFrameHandler} nextHandler={nextHandler} />}
+			{loading ? <h3>Loading...</h3> : nextStep ? <VideoEditor selectedFrames={selectedFrames} setNextStep={setNextStep} setSelectedFrames={setSelectedFrames} /> : <FrameSelection frames={frames} selectedFrames={selectedFrames} selectFrameHandler={selectedFrameHandler} nextHandler={nextHandler} />}
 		</main>
 	);
 }
