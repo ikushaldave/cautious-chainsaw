@@ -53,11 +53,7 @@ function VideoEditTools({ frames, currentFrame, previousFrameHandler, nextFrameH
 				{frames.map((frame, frameNumber) => (
 					<video key={frame.name} src={frame.url} className={currentFrame === frame ? "video_frame mx-4 active_frame" : "video_frame mx-4"} onClick={() => frameHandler(frameNumber)} />
 				))}
-				<div className="current_track_line">
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
+				<div className="current_track_line"></div>
 			</div>
 		</div>
 	);
